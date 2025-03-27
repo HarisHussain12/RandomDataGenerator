@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataGenerator", "RandomDataGenerator\RandomDataGenerator.csproj", "{72F7FD6B-B01C-4173-BA34-518603518068}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataReader", "RandomDataReader\RandomDataReader.csproj", "{F16B79A2-4F51-4773-935C-A3CEDC4CEA88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72F7FD6B-B01C-4173-BA34-518603518068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F7FD6B-B01C-4173-BA34-518603518068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F7FD6B-B01C-4173-BA34-518603518068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F7FD6B-B01C-4173-BA34-518603518068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16B79A2-4F51-4773-935C-A3CEDC4CEA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16B79A2-4F51-4773-935C-A3CEDC4CEA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16B79A2-4F51-4773-935C-A3CEDC4CEA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16B79A2-4F51-4773-935C-A3CEDC4CEA88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABCB2F78-239D-49D3-97C4-9EC793643B19}
+	EndGlobalSection
+EndGlobal

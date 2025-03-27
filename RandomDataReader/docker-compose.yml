@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  data-processor:
+    image: data-processor
+    volumes:
+      - ./data/input:/data/input
+      - ./data/output:/data/output
+    environment:
+      - InputFilePath=/data/input/OutputOfTask_A.txt
+      - OutputFilePath=/data/output/OutputOfTask_C.txt

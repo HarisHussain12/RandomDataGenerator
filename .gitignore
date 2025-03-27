@@ -6,6 +6,13 @@
 ## has more thorough IDE-specific entries.
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
+## Core .NET ignores ##
+bin/
+obj/
+RandomDataGenerator/bin/
+RandomDataGenerator/obj/
+RandomDataReader/bin/
+RandomDataReader/obj/
 
 # Build results
 [Dd]ebug/
