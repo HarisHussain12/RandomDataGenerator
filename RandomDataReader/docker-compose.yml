@@ -4,8 +4,8 @@ services:
   data-processor:
     image: data-processor
     volumes:
-      - ./data/input:/data/input
-      - ./data/output:/data/output
+      - ./Data/Input:/Data/Input
+      - ./Data/Output:/Data/Output
     environment:
-      - InputFilePath=/data/input/OutputOfTask_A.txt
-      - OutputFilePath=/data/output/OutputOfTask_C.txt
+      - InputFilePath=/Data/Input/OutputOfTask_A.txt
+      - OutputFilePath=/Data/Output/OutputOfTask_C.txt
