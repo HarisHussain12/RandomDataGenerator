@@ -11,19 +11,15 @@ namespace RandomDataGenerator.Services
     {
         private StreamWriter _writer;
 
-        public FileSystemOutput()
-        {
-        }
-
         public async Task InitializeAsync(string filePath)
         {
-             var fileStream = new FileStream(
-                filePath,
-                FileMode.Create,
-                FileAccess.Write,
-                FileShare.None,
-                81920,
-                FileOptions.SequentialScan | FileOptions.Asynchronous);
+            var fileStream = new FileStream(
+               filePath,
+               FileMode.Create,
+               FileAccess.Write,
+               FileShare.None,
+               81920,
+               FileOptions.SequentialScan | FileOptions.Asynchronous);
 
             _writer = new StreamWriter(fileStream, Encoding.ASCII);
             await Task.CompletedTask;
@@ -37,12 +33,8 @@ namespace RandomDataGenerator.Services
         public async Task CompleteAsync()
         {
             await _writer.FlushAsync();
+            Console.WriteLine($"Successfully generated file with random objects");
             _writer.Dispose();
-        }
-
-        public Task<string> ReadAsync()
-        {
-            throw new NotImplementedException();
         }
 
         public void Dispose()

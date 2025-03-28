@@ -28,9 +28,12 @@ internal class Program
 
             string filePath = Path.Combine(outputDir, settings.FileName);
 
+            Console.WriteLine($"Start generating data in {settings.TargetFileSizeMB}MB file at: {filePath}");
+
             await generator.GenerateDataAsync(filePath);
 
-            Console.WriteLine($"Successfully generated {settings.TargetFileSizeMB}MB file at: {filePath}");
+            Console.WriteLine($"FileName: {filePath}");
+            Console.WriteLine($"FileSize: {settings.TargetFileSizeMB}MB");
         }
         catch (Exception ex)
         {

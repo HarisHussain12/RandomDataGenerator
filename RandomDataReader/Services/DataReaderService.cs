@@ -2,11 +2,7 @@
 using RandomDataReader.Configuration;
 using RandomDataReader.Interfaces;
 using RandomDataReader.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RandomDataReader.Services
 {
@@ -16,13 +12,21 @@ namespace RandomDataReader.Services
         private readonly DataReaderSettings _settings;
         private readonly IOutputWriter _outputWriter;
 
-        public DataReaderService(IEnumerable<IDataParser> parsers, IOptions<DataReaderSettings> settings, IOutputWriter outputWriter)
+        public DataReaderService(
+            IEnumerable<IDataParser> parsers,
+            IOptions<DataReaderSettings> settings,
+            IOutputWriter outputWriter
+            )
         {
             _parsers = parsers;
             _outputWriter = outputWriter;
             _settings = settings.Value;
         }
 
+        /// <summary>
+        /// Processes data and writes it to a specified file, .
+        /// </summary>
+        /// <param name="inputFilePath">The path where this function gets input data from.</param>
         public async Task ProcessDataFromFileAsync(string inputFilePath)
         {
             try
@@ -61,11 +65,15 @@ namespace RandomDataReader.Services
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
+        /// <summary>
+        /// Attempts to parse a given string value using a series of parsers. If a parser successfully parses the value, the parsed result is written to an output. 
+        /// If none of the parsers can parse the value, an exception is thrown.
+        /// </summary>
+        /// <param name="value">The string value to be parsed.</param>
         private async Task TryParseData(string value)
         {
             ParsedObject? parsed = null;

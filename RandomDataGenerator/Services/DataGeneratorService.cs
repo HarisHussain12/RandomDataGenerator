@@ -1,11 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using RandomDataGenerator.Configuration;
 using RandomDataGenerator.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RandomDataGenerator.Services
 {
@@ -27,13 +22,18 @@ namespace RandomDataGenerator.Services
             _output = output;
             _random = random;
         }
+
+        /// <summary>
+        /// Generates data and writes it to a specified file, ensuring the total file size does not exceed the target size.
+        /// </summary>
+        /// <param name="filePath">The path where the generated data will be written.</param>
         public async Task GenerateDataAsync(string filePath)
         {
             try
             {
                 long targetSizeBytes = _settings.TargetFileSizeMB * 1024L * 1024L;
 
-                await _output.InitializeAsync(filePath);
+                await _output.InitializeAsync(filePath);  //initialize file stream
 
                 long bytesWritten = 0;
                 bool firstEntry = true;
@@ -54,12 +54,12 @@ namespace RandomDataGenerator.Services
                     var generator = _generators[generatorIndex % _generators.Count];
                     generatorIndex++;
 
-                    var data = generator.GenerateData();
+                    var data = generator.GenerateData();   // Generate random object
                     await _output.WriteAsync(data);
                     bytesWritten += data.Length;
                 }
 
-                await _output.CompleteAsync();
+                await _output.CompleteAsync();   //flush all bytes to the file
             }
             catch (Exception ex)
             {

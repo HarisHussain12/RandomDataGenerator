@@ -10,7 +10,6 @@ namespace RandomDataGenerator.Interfaces
     {
         Task InitializeAsync(string filePath);
         Task WriteAsync(string content);
-        Task<string> ReadAsync();
         Task CompleteAsync();
     }
 }
